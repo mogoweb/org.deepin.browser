@@ -4,7 +4,7 @@ package:
   id: org.deepin.browser
   kind: app
   name: deepin-browser
-  version: 6.5.3.2
+  version: 6.5.5.0
   description: browser for deepin os.
 
 base: main:org.deepin.foundation/23.0.0
@@ -15,20 +15,15 @@ command:
 
 build: |
   bash install_dep linglong/sources $PREFIX procps
-
-  # 生成immodules.cache文件
-  export LD_LIBRARY_PATH=$PREFIX/lib/x86_64-linux-gnu:/runtime/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu
-  export GTK_IM_MODULE_FILE=$PREFIX/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules.cache
-  /usr/lib/x86_64-linux-gnu/libgtk2.0-0/gtk-query-immodules-2.0 --update-cache $PREFIX/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules/im-fcitx5.so
-
   # 修改browser的硬编码路径
   sed -i "s#/usr/#$PREFIX/#g" $PREFIX/bin/browser
-  # 让浏览器使用生成的immodules.cache
-  sed -i "2i\export GTK_IM_MODULE_FILE=$PREFIX/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules.cache" $PREFIX/bin/browser
 sources:
+  - kind: file
+    url: https://aptly.uniontech.com/pkg/nonfree-eagle-1070/release-candidate/5rWP6KeI5Zmo56S-5Yy654mIVjIzLVJDMua1i-ivlTIwMjQtMDctMDEgMTQ6MzM6MDE/pool/non-free/o/org.deepin.browser/org.deepin.browser_6.5.3-1_amd64.deb
+    digest: 72a1aa9de1c296fca0e57f312574570120e686b862ab4ed00072bdf6073c378e
   # linglong:gen_deb_source sources amd64 https://pools.uniontech.com/deepin-beige beige main commercial
-  # linglong:gen_deb_source install org.deepin.browser, libsnappy1v5, procps
-  # linglong:gen_deb_source install fcitx5-frontend-gtk2
+  # linglong:gen_deb_source install libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatomic1 (>= 4.8), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.28), libcairo2 (>= 1.6.0), libcups2 (>= 1.7.0), libdbus-1-3 (>= 1.9.14), libdrm2 (>= 2.4.38), libexpat1 (>= 2.0.1), libfontconfig1 (>= 2.12.6), libfreetype6 (>= 2.11.0), libgbm1 (>= 17.1.0~rc2), libgcc1 (>= 1:4.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libgl1, libglib2.0-0 (>= 2.39.4), libgtk2.0-0 (>= 2.24.0), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.38), libpango-1.0-0 (>= 1.14.0), libsnappy1v5, libstdc++6 (>= 7), libx11-6 (>= 2:1.4.99.1), libxcb1 (>= 1.9.2), libxcomposite1 (>= 1:0.3-1), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxkbcommon0 (>= 0.5.0), libxrandr2, libxshmfence1, x11-utils, xdg-utils
+  # linglong:gen_deb_source install libsnappy1v5, procps
   - kind: file
     url: https://pools.uniontech.com/deepin-beige/pool/main/a/adwaita-icon-theme/adwaita-icon-theme_45.0-2_all.deb
     digest: 709761989d315d674f0e14c837afdd256ef58c941e49889307eb41f969e69069
@@ -569,9 +564,6 @@ sources:
   - kind: file
     url: https://pools.uniontech.com/deepin-beige/pool/main/libz/libzstd/libzstd1_1.5.5+dfsg2-2_amd64.deb
     digest: 92fff5b68d38bc369552561614e82b841fc29587f1c2315842691493c52a5818
-  - kind: file
-    url: https://pools.uniontech.com/deepin-beige/pool/commercial/o/org.deepin.browser/org.deepin.browser_6.5.2-1_amd64.deb
-    digest: ce43191bea19c84858244b7c4f028971feedd96c2cf94930073536e44b98fb87
   - kind: file
     url: https://pools.uniontech.com/deepin-beige/pool/main/p/perl/perl_5.36.0-10_amd64.deb
     digest: 59d13b610350339f3b273097011a3db6db60a99d587bf04eeb881c1a34168390
