@@ -58,8 +58,6 @@ do
         tar -xvf "$data_file" -C "$data_list_dir" >> "/tmp/deb-source-file/$(basename "$file").list"
         rm "$data_file"
 
-        # 清理不需要复制的目录
-        rm -r "${data_list_dir:?}/usr/share/applications"* 2>/dev/null || true
         # 修改pc文件的prefix
         sed -i "s#/usr#$PREFIX#g" "$data_list_dir"/usr/lib/"$TRIPLET"/pkgconfig/*.pc 2>/dev/null|| true
         sed -i "s#/usr#$PREFIX#g" "$data_list_dir"/usr/share/pkgconfig/*.pc 2>/dev/null || true
