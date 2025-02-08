@@ -4,11 +4,10 @@ package:
   id: org.deepin.browser
   kind: app
   name: deepin-browser
-  version: 6.6.1.0
+  version: 6.6.2.0
   description: browser for deepin os.
 
 base: main:org.deepin.base/23.1.0
-runtime: main:org.deepin.runtime.dtk/23.2.0
 
 command:
   - "browser"
@@ -28,8 +27,8 @@ build: |
   sed -i 's/\/usr\/bin\/browser/browser/' $PREFIX/share/applications/org.deepin.browser.desktop
 sources:
   - kind: file
-    url: https://aptly.uniontech.com/pkg/nonfree-eagle-1070/release-candidate/44CQ56S-5Yy654mI44CR44CQZGVlcGluX1YyM19SZWxlYXNl44CR44CQ6ZuG5oiQ5rWL6K-V44CR44CQ5rWP6KeI5Zmo44CRMjAyNC0wOC0wNyAxMzo1NToxNw/pool/non-free/o/org.deepin.browser/org.deepin.browser_6.5.3-1_amd64.deb
-    digest: 13d70e7821bbaf62bfa74a8a58f7bc02e7be375e66f90a3e48e1ce02ec0578c4
+    url: https://minio.cicd.getdeepin.org/share/org.deepin.browser_6.6.2_amd64.deb
+    digest: c8a69152588a77a6917786fb075d50584cfde1ed9dc2f1337406c6690215e278
   # linglong:gen_deb_source sources amd64 https://ci.deepin.com/repo/deepin/deepin-community/backup/rc2 beige main community
   # linglong:gen_deb_source install libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatomic1 (>= 4.8), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.28), libcairo2 (>= 1.6.0), libcups2 (>= 1.7.0), libdbus-1-3 (>= 1.9.14), libdrm2 (>= 2.4.38), libexpat1 (>= 2.0.1), libfontconfig1 (>= 2.12.6), libfreetype6 (>= 2.11.0), libgbm1 (>= 17.1.0~rc2), libgcc1 (>= 1:4.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libgl1, libglib2.0-0 (>= 2.39.4), libgtk2.0-0 (>= 2.24.0), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.38), libpango-1.0-0 (>= 1.14.0), libsnappy1v5, libstdc++6 (>= 7), libx11-6 (>= 2:1.4.99.1), libxcb1 (>= 1.9.2), libxcomposite1 (>= 1:0.3-1), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxkbcommon0 (>= 0.5.0), libxrandr2, libxshmfence1, x11-utils, xdg-utils
   # linglong:gen_deb_source install libsnappy1v5, procps

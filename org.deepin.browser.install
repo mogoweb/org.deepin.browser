@@ -77,9 +77,8 @@
 /opt/apps/org.deepin.browser/files/share/dsg/configs/org.deepin.browser
 /opt/apps/org.deepin.browser/files/share/dsg/configs/org.deepin.browser/org.deepin.browser.json
 /opt/apps/org.deepin.browser/files/share/browser
-/opt/apps/org.deepin.browser/files/share/browser/swiftshader
-/opt/apps/org.deepin.browser/files/share/browser/swiftshader/libGLESv2.so
-/opt/apps/org.deepin.browser/files/share/browser/swiftshader/libEGL.so
+/opt/apps/org.deepin.browser/files/share/browser/libGLESv2.so
+/opt/apps/org.deepin.browser/files/share/browser/libEGL.so
 /opt/apps/org.deepin.browser/files/share/browser/minidump_stackwalk
 /opt/apps/org.deepin.browser/files/share/browser/browser-sandbox
 /opt/apps/org.deepin.browser/files/share/browser/.pki
@@ -87,7 +86,7 @@
 /opt/apps/org.deepin.browser/files/share/browser/.pki/uos_nssdb/cert9.db
 /opt/apps/org.deepin.browser/files/share/browser/.pki/uos_nssdb/key4.db
 /opt/apps/org.deepin.browser/files/share/browser/.pki/uos_nssdb/pkcs11.txt
-/opt/apps/org.deepin.browser/files/share/browser/crashpad_handler
+/opt/apps/org.deepin.browser/files/share/browser/chrome_crashpad_handler
 /opt/apps/org.deepin.browser/files/share/browser/snapshot_blob.bin
 /opt/apps/org.deepin.browser/files/share/browser/initial_bookmarks.html
 /opt/apps/org.deepin.browser/files/share/browser/master_preferences
