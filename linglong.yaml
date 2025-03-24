@@ -4,10 +4,10 @@ package:
   id: org.deepin.browser
   kind: app
   name: deepin-browser
-  version: 6.6.4.0
+  version: 6.6.4.1
   description: browser for deepin os.
 
-base: main:org.deepin.base/23.1.0
+base: main:org.deepin.base/25.2.0
 
 command:
   - "browser"
